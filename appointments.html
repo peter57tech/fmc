@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | Firima Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container nav-container">
+       <a href="index.html" class="site-logo" aria-label="Firima Medical Centre Home">
+                <img src="./asset/firima-logo.png"
+                    alt="Firima Medical Centre Logo">
+            </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNavbar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="navbar" id="mainNavbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+    </div>
+</header>
+
+<main>
+    <section class="appointments section">
+        <div class="container appointment-grid">
+            <div class="appointment-info">
+                <span class="section-label">PLAN YOUR VISIT</span>
+                <h2>Request an Appointment</h2>
+                <p>Use this form to prepare an appointment enquiry. The centre must confirm the date and availability directly.</p>
+                <div class="appointment-detail">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div>
+                        <h3>Choose a preferred date</h3>
+                        <p>Select today or a future date.</p>
+                    </div>
+                </div>
+                <div class="appointment-detail">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h3>Need assistance?</h3>
+                        <p>Visit our contact page for available contact information.</p>
+                        <a href="contact.html" class="text-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="appointment-form" id="appointmentForm">
+                <h3>Appointment Enquiry Form</h3>
+                <div class="form-group">
+                    <label for="patientName">Full Name *</label>
+                    <input id="patientName" name="patientName" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientPhone">Phone Number *</label>
+                    <input id="patientPhone" name="patientPhone" type="tel" autocomplete="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientEmail">Email Address (optional)</label>
+                    <input id="patientEmail" name="patientEmail" type="email" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="serviceType">Service *</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="">Choose a service</option>
+                        <option value="Pharmacy enquiry">Pharmacy enquiry</option>
+                        <option value="Maternal care">Maternal care</option>
+                        <option value="Other enquiry">Other enquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date *</label>
+                    <input id="appointmentDate" name="appointmentDate" type="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientMessage">Message (optional)</label>
+                    <textarea id="patientMessage" name="patientMessage" rows="4" placeholder="Please do not include sensitive medical details."></textarea>
+                </div>
+                <p class="privacy-note">This demonstration form does not send or save your information.</p>
+                <button type="submit" class="btn btn-primary submit-button">Prepare My Request <i class="fa-solid fa-arrow-right"></i></button>
+                <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="site-logo" aria-label="Firima Medical Centre Home">
+                <img src="./asset/firima-logo.png"
+                    alt="Firima Medical Centre Logo">
+            </a>
+            <p>Your Health and Wellbeing Matter.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+        </div>
+        <div class="footer-column">
+            <h3>Patient Links</h3>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>Location</h3>
+            <p>24 Elelenwo Road, Port Harcourt, Rivers State, Nigeria</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; <span id="currentYear">2026</span> Firima Medical Centre.</p>
+        <a href="index.html">Back to Home</a>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

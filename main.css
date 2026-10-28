@@ -1,0 +1,1305 @@
+:root {
+    --navy: #123b60;
+    --blue: #1769aa;
+    --teal: #008f83;
+    --teal-light: #e6f6f3;
+    --white: #ffffff;
+    --light: #f4f9fc;
+    --text: #304b60;
+    --muted: #718394;
+    --border: #dce7ee;
+    --shadow: 0 12px 35px rgba(18, 59, 96, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* =========================
+   2. HEADER & NAVIGATION
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 3px 18px rgba(18, 59, 96, 0.07);
+}
+
+.nav-container {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Official image logo */
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-header .site-logo img {
+    width: 165px;
+    height: 72px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Navigation links */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+}
+
+.navbar a {
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--teal);
+}
+
+/* Book a visit button */
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 20px;
+    border-radius: 8px;
+    color: var(--white);
+    background: var(--teal);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.header-button:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--navy);
+    background: var(--white);
+    font-size: 24px;
+}
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(18, 59, 96, 0.55),
+            rgba(18, 59, 96, 0.65)),
+        url("./asset/background-image.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -120px;
+    top: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 50px rgba(255, 255, 255, 0.035),
+        0 0 0 100px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(8, 43, 72, 0.35),
+            rgba(8, 43, 72, 0.02));
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.hero-text {
+    max-width: 760px;
+    color: var(--white);
+}
+
+/* Logo in the hero section */
+
+.hero-logo {
+    width: min(300px, 85%);
+    margin-bottom: 22px;
+}
+
+.hero-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Hero eyebrow */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.09);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.eyebrow i {
+    color: #8ff0d9;
+}
+
+/* Main hero heading */
+
+.hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: #8ff0d9;
+}
+
+.hero-text>p {
+    max-width: 650px;
+    margin-bottom: 32px;
+    color: #e5f2f7;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 23px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--teal);
+}
+
+.hero .btn-primary {
+    background: #11b5a0;
+}
+
+.btn-primary:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.hero .btn-primary:hover {
+    color: var(--navy);
+    background: var(--white);
+}
+
+.btn-outline {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.75);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    color: var(--navy);
+    background: var(--white);
+}
+
+/* Hero address */
+
+.hero-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 28px;
+    color: #e0f1f5;
+    font-size: 15px;
+}
+
+.hero-note i {
+    margin-top: 7px;
+    color: #8ff0d9;
+}
+
+/* =========================
+   4. SECTION HEADINGS
+========================= */
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--teal);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2,
+.intro-content h2,
+.care-content h2,
+.appointment-info h2 {
+    margin-bottom: 18px;
+    color: var(--navy);
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================
+   5. INTRODUCTION SECTION
+========================= */
+
+.intro {
+    background: var(--white);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.intro-icon {
+    min-height: 350px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border-radius: 24px;
+    color: var(--white);
+    background:
+        radial-gradient(circle at top right, #49c6b1, transparent 45%),
+        linear-gradient(145deg, #123b60, #176b83);
+    box-shadow: var(--shadow);
+}
+
+.intro-icon>i {
+    color: #b9fff0;
+    font-size: 100px;
+}
+
+.intro-icon span {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.intro-content p {
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    color: var(--teal);
+    font-size: 16px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--navy);
+}
+
+/* =========================
+   6. SERVICES SECTION
+========================= */
+
+.services {
+    background: var(--light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.service-card {
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 5px 18px rgba(18, 59, 96, 0.035);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    font-size: 30px;
+}
+
+.pharmacy-icon {
+    color: var(--blue);
+    background: #e7f1ff;
+}
+
+.maternal-icon {
+    color: var(--teal);
+    background: var(--teal-light);
+}
+
+.service-card h3 {
+    margin-bottom: 13px;
+    color: var(--navy);
+    font-size: 27px;
+    line-height: 1.4;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.service-disclaimer {
+    max-width: 850px;
+    margin: 28px auto 0;
+    color: var(--muted);
+    font-size: 15px;
+    text-align: center;
+}
+
+/* =========================
+   7. CARE APPROACH
+========================= */
+
+.care-section {
+    background: var(--white);
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.care-content>p {
+    margin-bottom: 24px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.care-list {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.care-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.care-list i {
+    margin-top: 6px;
+    color: var(--teal);
+}
+
+.care-visual {
+    min-height: 330px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: var(--teal-light);
+    text-align: center;
+}
+
+.care-visual-icon {
+    width: 105px;
+    height: 105px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--teal);
+    font-size: 45px;
+}
+
+.care-visual h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 27px;
+}
+
+.care-visual p {
+    max-width: 340px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =========================
+   8. APPOINTMENT SECTION
+========================= */
+
+.appointments {
+    background: var(--light);
+}
+
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 55px;
+}
+
+.appointment-info>p {
+    margin-bottom: 32px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.appointment-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.appointment-detail>i {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--teal);
+    background: var(--teal-light);
+    font-size: 20px;
+}
+
+.appointment-detail h3 {
+    margin-bottom: 5px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.appointment-detail p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* Appointment form card */
+
+.appointment-form {
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.appointment-form>h3 {
+    margin-bottom: 27px;
+    color: var(--navy);
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+/* Form fields */
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 15px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8494a1;
+    opacity: 1;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(0, 143, 131, 0.1);
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.privacy-note {
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+}
+
+/* Appointment form status message */
+
+.form-message {
+    display: none;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 8px;
+    color: #155c4f;
+    background: var(--teal-light);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.form-message.show {
+    display: block;
+}
+
+/* =========================
+   9. CONTACT SECTION
+========================= */
+
+.contact {
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.contact-card {
+    padding: 32px 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.contact-icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    color: var(--teal);
+    background: var(--teal-light);
+    font-size: 25px;
+}
+
+.contact-card h3 {
+    margin-bottom: 10px;
+    color: var(--navy);
+    font-size: 23px;
+}
+
+.contact-card p {
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.contact-card small {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   10. FOOTER
+========================= */
+
+.site-footer {
+    color: #d8e6ef;
+    background: #0c2e49;
+}
+
+/* Footer columns */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 35px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+/* Footer logo */
+
+.footer-brand .site-logo {
+    display: inline-flex;
+    margin-bottom: 15px;
+}
+
+.footer-brand .site-logo img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.footer-brand>p {
+    max-width: 320px;
+    margin-top: 5px;
+    color: #b9cedd;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Footer links */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-column h3 {
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: 20px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #b9cedd;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.footer-column a {
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #8ff0d9;
+}
+
+.footer-column p i {
+    margin-right: 7px;
+    color: #8ff0d9;
+}
+
+/* Copyright bar */
+
+.copyright {
+    min-height: 70px;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #a9bfce;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+.copyright a {
+    flex-shrink: 0;
+    color: #8ff0d9;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: var(--white);
+}
+
+/* =========================
+   11. LARGE TABLETS
+========================= */
+
+@media (max-width: 1050px) {
+    .nav-container {
+        gap: 15px;
+    }
+
+    .site-header .site-logo img {
+        width: 140px;
+        height: 65px;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .header-button {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .intro-grid,
+    .care-grid {
+        gap: 40px;
+    }
+
+    .appointment-grid {
+        gap: 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card h3 {
+        font-size: 25px;
+    }
+}
+
+/* =========================
+   12. TABLETS & MOBILE
+========================= */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 65px 0;
+    }
+
+    .nav-container {
+        min-height: 76px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .site-header .site-logo img {
+        width: 135px;
+        height: 60px;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+        margin-left: auto;
+    }
+
+    .navbar {
+        display: none;
+        order: 4;
+        width: 100%;
+        padding: 15px 0 10px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .navbar.show-menu {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 12px 5px;
+        font-size: 17px;
+    }
+
+    .header-button {
+        order: 3;
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .hero-content {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .hero-logo {
+        width: min(240px, 80%);
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 8vw, 55px);
+    }
+
+    .hero-text>p {
+        font-size: 17px;
+    }
+
+    .intro-grid,
+    .care-grid,
+    .appointment-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .intro-icon {
+        min-height: 260px;
+    }
+
+    .intro-icon>i {
+        font-size: 75px;
+    }
+
+    .care-visual {
+        min-height: 270px;
+    }
+
+    .appointment-form {
+        padding: 28px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 28px;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+
+    .footer-brand .site-logo img {
+        width: 175px;
+        height: 85px;
+    }
+
+    .section-heading p {
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   13. SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 500px) {
+    .container {
+        width: 92%;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .site-header .site-logo img {
+        width: 110px;
+        height: 52px;
+    }
+
+    .header-button {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero-logo {
+        width: min(200px, 75%);
+        margin-bottom: 18px;
+    }
+
+    .eyebrow {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-text>p {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .hero-note {
+        font-size: 14px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading h2,
+    .intro-content h2,
+    .care-content h2,
+    .appointment-info h2 {
+        font-size: 31px;
+    }
+
+    .section-label {
+        font-size: 13px;
+    }
+
+    .section-heading p {
+        font-size: 17px;
+    }
+
+    .intro-content p,
+    .care-content>p {
+        font-size: 17px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 26px;
+    }
+
+    .service-card h3 {
+        font-size: 25px;
+    }
+
+    .service-card p {
+        font-size: 17px;
+    }
+
+    .service-disclaimer {
+        font-size: 14px;
+    }
+
+    .care-list li {
+        font-size: 16px;
+    }
+
+    .care-visual h3 {
+        font-size: 24px;
+    }
+
+    .care-visual p {
+        font-size: 16px;
+    }
+
+    .appointment-detail h3 {
+        font-size: 18px;
+    }
+
+    .appointment-detail p {
+        font-size: 16px;
+    }
+
+    .appointment-form {
+        padding: 22px 18px;
+    }
+
+    .appointment-form>h3 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 13px;
+        font-size: 16px;
+    }
+
+    .privacy-note {
+        font-size: 14px;
+    }
+
+    .contact-card h3 {
+        font-size: 22px;
+    }
+
+    .contact-card p {
+        font-size: 16px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-brand .site-logo img {
+        width: 155px;
+        height: 75px;
+    }
+
+    .footer-column h3 {
+        font-size: 19px;
+    }
+
+    .footer-brand>p,
+    .footer-column a,
+    .footer-column p {
+        font-size: 15px;
+    }
+
+    .copyright {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 18px 4%;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   14. ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #21bda7;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

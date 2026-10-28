@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Firima Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="site-logo" aria-label="Firima Medical Centre Home">
+                <img src="./asset/firima-logo.png"
+                    alt="Firima Medical Centre Logo">
+            </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNavbar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="navbar" id="mainNavbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="appointments.html" class="header-button">Book a Visit</a>
+    </div>
+</header>
+
+<main>
+    <section class="services section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">OUR SERVICES</span>
+                <h2>Healthcare Services</h2>
+                <p>Contact the centre to confirm service availability and details.</p>
+            </div>
+            <div class="service-grid">
+                <article class="service-card">
+                    <div class="service-icon pharmacy-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+                    <h3>Pharmacy Services</h3>
+                    <p>Enquire about medicine availability, prescriptions, and appropriate medicine-use guidance from qualified pharmacy personnel, where available.</p>
+                    <a href="contact.html" class="text-link">Ask a Question <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon maternal-icon"><i class="fa-solid fa-person-pregnant"></i></div>
+                    <h3>Maternal Care</h3>
+                    <p>Enquire about pregnancy-related care, antenatal appointments, and maternal health services offered by the centre.</p>
+                    <a href="appointments.html" class="text-link">Request a Visit <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            </div>
+            <p class="service-disclaimer">Please confirm the centre's actual services and availability directly with the facility.</p>
+            <div style="text-align:center; margin-top:30px;">
+                <a href="appointments.html" class="btn btn-primary">Request an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="site-logo" aria-label="Firima Medical Centre Home">
+                <img src="./asset/firima-logo.png"
+                    alt="Firima Medical Centre Logo">
+            </a>
+            <p>Your Health and Wellbeing Matter.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+        </div>
+        <div class="footer-column">
+            <h3>Patient Links</h3>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>Location</h3>
+            <p>24 Elelenwo Road, Port Harcourt, Rivers State, Nigeria</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; <span id="currentYear">2026</span> Firima Medical Centre.</p>
+        <a href="index.html">Back to Home</a>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
